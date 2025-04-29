@@ -7,17 +7,16 @@ struct Player {
     float batting_avg;
 };
 
-
-int main(){
+int main() {
     int n;
     printf("Enter number of players: ");
     scanf("%d", &n);
-    //Defining the size of structure
+    
     struct Player players[n];
 
     // Input
-    for(int i = 0; i < n; i++) {
-        printf("\nEnter details for player %d:\n", i+1);
+    for (int i = 0; i < n; i++) {
+        printf("\nEnter details for player %d:\n", i + 1);
         printf("Name: ");
         scanf("%s", players[i].name);
         printf("Team: ");
@@ -27,9 +26,9 @@ int main(){
     }
 
     // Sorting
-    for(int i = 0; i < n-1; i++) {
-        for(int j = i+1; j < n; j++) {
-            if(players[i].batting_avg < players[j].batting_avg) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (players[i].batting_avg < players[j].batting_avg) {
                 struct Player temp = players[i];
                 players[i] = players[j];
                 players[j] = temp;
@@ -37,10 +36,11 @@ int main(){
         }
     }
 
-     // Output
-    printf("\nPlayers sorted by batting average (descending order):\n");
-    for(int i = 0; i < n; i++) {
-        printf("Name: %s, Team: %s, Batting Average: %.2f\n",
+    // Output in table format
+    printf("\n%-20s %-20s %-20s\n", "Player Name", "Team Name", "Batting Average");
+    printf("---------------------------------------------------------------\n");
+    for (int i = 0; i < n; i++) {
+        printf("%-20s %-20s %-20.2f\n",
                players[i].name,
                players[i].team,
                players[i].batting_avg);
