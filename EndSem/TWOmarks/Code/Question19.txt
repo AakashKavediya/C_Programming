@@ -1,0 +1,36 @@
+// Write syntax of for loop and nested for loop.
+
+
+Syntax for "for loop"
+
+for(start, end, step){
+    code 
+}
+
+
+example:
+    for(int i = 0; i < 10; i++){}
+
+
+
+
+// ---------------------------------------------------------------
+
+
+
+
+Syntax for "nested for loop"
+
+for(start, end, step){
+    for(start, end, step){
+    code 
+    } 
+}
+
+
+example:
+    for(int i = 0; i < 10; i++){
+        for(int j = 0; j < 10; j++){}
+    }
+
+
